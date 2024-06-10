@@ -14,21 +14,17 @@ public class CurrencyConverter {
 
         System.out.println("Currency Converter");
 
-        // Currency Selection
         System.out.print("Enter base currency (e.g., USD, EUR): ");
         String baseCurrency = scanner.nextLine().toUpperCase();
         System.out.print("Enter target currency (e.g., USD, EUR): ");
         String targetCurrency = scanner.nextLine().toUpperCase();
 
-        // Amount Input
         System.out.print("Enter amount to convert: ");
         double amount = scanner.nextDouble();
 
-        // Fetch exchange rate and perform conversion
         double exchangeRate = fetchExchangeRate(baseCurrency, targetCurrency);
         if (exchangeRate != -1) {
             double convertedAmount = amount * exchangeRate;
-            // Display Result
             System.out.println(amount + " " + baseCurrency + " = " + convertedAmount + " " + targetCurrency);
         } else {
             System.out.println("Failed to fetch exchange rate. Please try again later.");
